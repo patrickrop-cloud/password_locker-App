@@ -14,7 +14,9 @@ class TestUser(unittest.TestCase):
         SetUp method is used to run before each test case.
         '''
 
-        self.new_user = User('patrick', '123') #creating user object
+        self.new_user = User('patrick', '0000') #creating user object
+
+
 
     def test_init(self):
         '''
@@ -22,7 +24,9 @@ class TestUser(unittest.TestCase):
 
         '''
         self.assertTrue(self.new_user.username, 'patrick')
-        self.assertTrue(self.new_user,'password')
+        self.assertTrue(self.new_user.password,'0000')
+
+
 
     def test_save_acc(self):
         '''
@@ -46,20 +50,18 @@ class TestUser(unittest.TestCase):
         '''
         self.assertEqual(User.display_acc(),User.user_List) #displaying users list.
 
+
+
     def test_delete_acc(self):
         '''
-        test_delete_contact to test if we can remove an account from our user list
+        test_delete account to test if we can remove an account from our user list
         '''
         self.new_user.save_acc()
-        test_user = User("test","123") #new acc
+        test_user = User("test","0000") #new acc
         test_user.save_acc()
 
         self.new_user.delete_acc()
         self.assertEqual(len(User.user_List),1)
-
-
-
-
 
     # def test_save_multiple_acc(self):
     #     '''
