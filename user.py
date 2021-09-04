@@ -31,6 +31,14 @@ class User:
                 User.user_List.remove(user)
 
 
+    @classmethod
+    def display_acc(cls):
+        '''
+        this method returns user list.
+        '''
+        return cls.user_List
+
+
 
         
 
