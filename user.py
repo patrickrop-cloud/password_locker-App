@@ -12,7 +12,7 @@ class User:
         self.username = username
         self.password = password
 
-    user_List = []
+    user_List = [] #This is an empty list.
 
     def save_acc(self):
         '''
