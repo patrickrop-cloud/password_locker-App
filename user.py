@@ -14,6 +14,14 @@ class User:
 
     user_List = []
 
+    def save_acc(self):
+        '''
+        This method saves new user to user list.
+        '''
+
+        User.user_List.append(self)
+
+
 
         
 
