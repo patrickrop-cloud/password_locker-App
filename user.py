@@ -16,10 +16,12 @@ class User:
 
     def save_acc(self):
         '''
-        This method saves new user to user list.
+        This method saves new user to user object to the list.
         '''
 
         User.user_List.append(self)
+
+        
 
 
 

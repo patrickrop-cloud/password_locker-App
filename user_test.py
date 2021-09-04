@@ -40,6 +40,13 @@ class TestUser(unittest.TestCase):
         User.user_List = []
 
 
+    def test_display_acc(self):
+        '''
+        The method returns the list of saved accounts.
+        '''
+        self.assertEqual(User.display_acc(),User.user_List)
+
+
 
 
     # def test_save_multiple_acc(self):
