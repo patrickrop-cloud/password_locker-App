@@ -21,7 +21,14 @@ class User:
 
         User.user_List.append(self)
 
-        
+    @classmethod
+    def delete_acc(self,username):
+        '''
+        deleting a saved user account
+        '''
+        for user in User.user_List:
+            if user.username == username:
+                User.user_List.remove(user)
 
 
 

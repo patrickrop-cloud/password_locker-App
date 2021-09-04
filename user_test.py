@@ -44,7 +44,19 @@ class TestUser(unittest.TestCase):
         '''
         The method returns the list of saved accounts.
         '''
-        self.assertEqual(User.display_acc(),User.user_List)
+        self.assertEqual(User.display_acc(),User.user_List) #displaying users list.
+
+    def test_delete_acc(self):
+        '''
+        test_delete_contact to test if we can remove an account from our user list
+        '''
+        self.new_user.save_acc()
+        test_user = User("test","123") #new acc
+        test_user.save_acc()
+
+        self.new_user.delete_acc()
+        self.assertEqual(len(User.user_List),1)
+
 
 
 
@@ -53,16 +65,6 @@ class TestUser(unittest.TestCase):
     #     '''
     #     test_save_multiple_user to check if we can save multiple user objects to our user_list
     #     '''
-
-
-
-       
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
