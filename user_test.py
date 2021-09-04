@@ -24,13 +24,33 @@ class TestUser(unittest.TestCase):
         self.assertTrue(self.new_user.username, 'patrick')
         self.assertTrue(self.new_user,'password')
 
-    def test_save_user(self):
+    def test_save_acc(self):
         '''
         test_save_user test case to test if the user object is saved into user list.
         '''
 
         self.new_user.save_acc() #saving the new user
         self.assertEqual(len(User.user_List),1)
+
+    def tearDown(self):
+        '''
+        This is a method to clean up after each testcase has run.
+        '''
+
+        User.user_List = []
+
+
+
+
+    # def test_save_multiple_acc(self):
+    #     '''
+    #     test_save_multiple_user to check if we can save multiple user objects to our user_list
+    #     '''
+
+
+
+       
+
 
 
 
