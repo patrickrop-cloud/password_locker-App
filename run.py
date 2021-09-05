@@ -10,3 +10,13 @@ def create_acc(username,password):
     '''
     new_acc = User(username,password)
     return new_acc
+
+    #save new account
+def save_accs(acc):
+    '''
+    This is a method to save a newly created account.
+    '''
+    acc.save_acc
+
+    
+
