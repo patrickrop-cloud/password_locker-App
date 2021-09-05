@@ -18,5 +18,11 @@ def save_accs(acc):
     '''
     acc.save_acc
 
-    
+    #display account
+def display_acc():
+    '''
+    This method displays user accounts.
+    '''
+    return User.display_acc()
+
 
