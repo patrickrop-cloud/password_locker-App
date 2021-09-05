@@ -57,10 +57,10 @@ class TestUser(unittest.TestCase):
         test_delete account to test if we can remove an account from our user list
         '''
         self.new_user.save_acc()
-        test_user = User("test","0000") #new acc
+        test_user = User("Test","acc") #new acc
         test_user.save_acc()
 
-        self.new_user.delete_acc()
+        self.new_user.delete_acc() #deleting a user account
         self.assertEqual(len(User.user_List),1)
 
     # def test_save_multiple_acc(self):
