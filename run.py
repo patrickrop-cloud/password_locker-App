@@ -38,7 +38,7 @@ def display_acc():
 def main():
     print("Hello, welcome to your password locker. Enter your name")
     username = input()
-    print(f"Hello{username}. What would you like to do?")
+    print(f"Hello {username}. What would you like to do?")
     print('\n')
 
 
@@ -141,7 +141,7 @@ def main():
                
                 
         elif short_code == 'exit':
-            print("Thank you for choosing password locker...")
+            print("***Thank you for choosing password locker...***")
         else:print("I really din't pick that.Please use the short codes")
 
 

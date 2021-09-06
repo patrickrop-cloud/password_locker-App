@@ -18,7 +18,6 @@ class User:
         '''
         This method saves new user to user object to the list.
         '''
-
         User.user_List.append(self)
 
     @classmethod
