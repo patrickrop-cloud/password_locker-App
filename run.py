@@ -2,8 +2,9 @@
 import random
 # import string
 from user import User
+from credentials import Logins #importing credential class.
 
-#create account
+#create a user account
 def create_acc(username,password):
     '''
     This function creates a new user account.
@@ -16,7 +17,15 @@ def save_accs(acc):
     '''
     This is a method to save a newly created account.
     '''
-    acc.save_acc
+    acc.save_acc()
+
+#function to verify user account
+def verify_acc(username,password):
+    '''
+    this is a function to verify an account.
+    '''
+    check_acc = Logins.check_acc(username,password)
+    return check_acc
 
     #display account
 def display_acc():
@@ -34,12 +43,12 @@ def main():
 
 
     while True:
-        print("Use the short codes below: ca - create new acc, del - delete, da - display acc, lg - login, exit - exit password locker")
-        short_code = input().lower()
+        print("Use the short codes below: \n ca - create new acc, del - delete, da - display acc, lg - login, exit - exit password locker")
+        short_code = input().lower().strip()
 
 
         if short_code == 'ca':
-            print("Create Username")
+            print("Create a new account")
             username = input()
 
             print("Create Password")
@@ -54,22 +63,24 @@ def main():
                 password = input()
                 print("confirm password")
                 confirm_password = input()
+                # print(f"Succesful! A new account has been created for: {username} with password {password}")
+                # print('\n')
 
             else:
-                print(f"Hurray {username} account created succesfully!")
+                print(f"Succesful! {username} account created succesfully!")
                 print('\n')
 
             save_accs(create_acc(username,password))
             print('\n')
-            print(f"new Acc {username}  with password {password} created")
+            print(f"New Acc {username}  with password {password} created")
             print('\n')
             
        
-            print("Welcome,Proceed to login")
+            print("Welcome to your account. Proceed to login")
             print("username")
             entered_username = input()
             
-            print("Your password")
+            print("Password")
             entered_password = input()
 
 
@@ -87,14 +98,15 @@ def main():
 
         elif short_code =='lg':
             print("Welcome")
-            print("Enter your username")
+            print("Username")
             default_username = input()
-            print("Enter your password")
+            print("Password")
             default_password = input()
             print("\n")
             
             while default_username != 'newuser' or default_password != '12345':
-                print("Wrong username or password use username newuser and password 12345 to login")
+                print("Wrong username or password?")
+                print("Use username newuser and password 12345 to login") 
                 print("\n")
                 
                 print("Enter Username")
@@ -124,7 +136,7 @@ def main():
                 username = input()
 
               
-                User.delete_account(username)
+                User.delete_acc(username)
                 print(f"Your acc {username} has been deleted successfully") 
                
                 

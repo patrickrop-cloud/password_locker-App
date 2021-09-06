@@ -1,5 +1,6 @@
 from user import User #importing user class.
 
+
 class Logins:
     '''
     This is a class to create login credentials instance.
